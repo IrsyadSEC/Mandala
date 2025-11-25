@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import './styles.css';
-import mandalaImg from '/img/mandala.png';
+import mandalaImg from './img/mandala.png';
 import { createRoot } from "react-dom/client";
 import { 
   Shield, 
@@ -163,15 +163,15 @@ const Hero = () => {
                 src="{mandalaImg}" 
                 alt="Mandala Siber Shield Logo" 
                 className="hero-logo-img"
-                onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    // Fallback svg
-                    if(logoContainerRef.current) {
-                        logoContainerRef.current.innerHTML = `
-                            <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 20px rgba(59,130,246,0.5));"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        `;
-                    }
-                }}
+                // onError={(e) => {
+                //     e.currentTarget.style.display = 'none';
+                //     // Fallback svg
+                //     if(logoContainerRef.current) {
+                //         logoContainerRef.current.innerHTML = `
+                //             <svg width="300" height="300" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 20px rgba(59,130,246,0.5));"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                //         `;
+                //     }
+                // }}
               />
             </div>
           </div>

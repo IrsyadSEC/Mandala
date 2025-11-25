@@ -69,7 +69,7 @@ const Header = () => {
       <div className="container nav-container">
         <a href="#hero" className="logo-area">
            <img 
-             src="./logo.png" 
+             src="/img/mandala.png" 
              alt="Mandala Siber" 
              className="logo-img-header"
              onError={(e) => {

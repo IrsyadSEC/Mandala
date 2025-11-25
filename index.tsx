@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import './styles.css';
+import mandalaImg from '/img/mandala.png';
 import { createRoot } from "react-dom/client";
 import { 
   Shield, 
@@ -36,6 +37,7 @@ import {
   Clock,
   MessageCircle
 } from "lucide-react";
+
 
 // --- Configuration ---
 const EDUCATION_DISCOUNT = 20;
@@ -158,7 +160,7 @@ const Hero = () => {
             <div className="logo-parallax-container">
               <div className="hero-bg-glow"></div>
               <img 
-                src="/img/mandala.png" 
+                src="{mandalaImg}" 
                 alt="Mandala Siber Shield Logo" 
                 className="hero-logo-img"
                 onError={(e) => {

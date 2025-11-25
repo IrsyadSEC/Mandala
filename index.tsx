@@ -160,7 +160,7 @@ const Hero = () => {
             <div className="logo-parallax-container">
               <div className="hero-bg-glow"></div>
               <img 
-                src="{mandalaImg}" 
+                src={mandalaImg} 
                 alt="Mandala Siber Shield Logo" 
                 className="hero-logo-img"
                 // onError={(e) => {

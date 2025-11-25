@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandala Siber - Logo Asset</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* Specific override for center presentation */
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="logo-showcase-page">
+    
+    <div class="logo-parallax-container" id="logoContainer">
+        <div class="hero-bg-glow"></div>
+        <img 
+            src="./logo.png" 
+            alt="Mandala Siber Logo" 
+            class="hero-logo-img" 
+            id="logoImg"
+            style="width: 400px; max-width: 80vw;"
+        >
+    </div>
+
+    <h1>Mandala Siber</h1>
+
+    <script>
+        const container = document.body;
+        const logo = document.getElementById('logoImg');
+
+        container.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            
+            // Calculate offset
+            const x = (clientX - innerWidth / 2) / 25;
+            const y = (clientY - innerHeight / 2) / 25;
+            
+            // Apply transform
+            logo.style.transform = `translate(${x}px, ${y}px) perspective(1000px) rotateY(${x * 0.5}deg) rotateX(${-y * 0.5}deg)`;
+        });
+
+        // Mobile Gyroscope fallback (if supported/permitted)
+        window.addEventListener('deviceorientation', (e) => {
+            if (!e.beta || !e.gamma) return;
+            const x = e.gamma; // Left/Right tilt
+            const y = e.beta;  // Front/Back tilt
+            
+            // Limit rotation
+            const limitX = Math.max(Math.min(x, 45), -45) / 2;
+            const limitY = Math.max(Math.min(y, 45), -45) / 2;
+
+            logo.style.transform = `perspective(1000px) rotateY(${limitX}deg) rotateX(${-limitY}deg)`;
+        });
+    </script>
+</body>
+</html>
